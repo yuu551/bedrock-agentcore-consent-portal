@@ -1,0 +1,18 @@
+node_modules
+dist
+.amplify
+amplify_outputs.json
+amplifyconfiguration.json
+.env*
+*.local
+*.log
+.DS_Store
+__pycache__/
+
+.local/
+.venv/
+
+# Local review and setup state
+.devflow/
+plans/
+portal-setup/

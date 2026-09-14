@@ -1,0 +1,17 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - corepack enable
+        - pnpm install --frozen-lockfile
+        - pnpm ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+frontend:
+  phases:
+    build:
+      commands:
+        - pnpm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'

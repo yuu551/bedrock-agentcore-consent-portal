@@ -1,0 +1,11 @@
+FROM public.ecr.aws/docker/library/python:3.14-slim
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY main.py gateway_auth.py memory_session.py connections.py ./
+
+EXPOSE 8080
+CMD ["python", "main.py"]
